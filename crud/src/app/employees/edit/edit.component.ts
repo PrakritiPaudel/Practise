@@ -23,6 +23,12 @@ export class EditComponent implements OnInit {
     this.id = +this.route.snapshot.paramMap.get('id');
     this.header = this.id === 0 ? 'Add Employee' : 'Edit Employee';
   }
+
+  /**
+   * This method submits the form after the input field is filled. No validations added yet.
+   *
+   * @param form - holds the value of input properties of the form
+   */
   onSubmit(form: NgForm) {
     let employee: Employee = {
       id: form.value.id,
