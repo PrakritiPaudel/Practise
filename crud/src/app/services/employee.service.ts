@@ -32,7 +32,12 @@ export class EmployeeService {
     },
   ];
 
-  constructor() {}
+  constructor() {
+    this.employees =
+      sessionStorage.length > 0
+        ? JSON.parse(sessionStorage.getItem('Employees'))
+        : this.employees;
+  }
 
   onGet() {
     return this.employees;
@@ -40,5 +45,17 @@ export class EmployeeService {
 
   onAdd(employee: Employee) {
     this.employees.push(employee);
+    sessionStorage.setItem('Employees', JSON.stringify(this.employees));
+  }
+
+  onDelete(employee: Employee) {
+    // Find the index of the item to be removed
+    const indexOfItem = this.employees.findIndex((e) => e.id === employee.id);
+    if (indexOfItem > -1) {
+      this.employees.splice(indexOfItem, 1);
+    }
+
+    // Stringify and Save to session storage
+    sessionStorage.setItem('Employees', JSON.stringify(this.employees));
   }
 }

@@ -21,9 +21,9 @@
         <td>{{ employee.email }}</td>
         <td>{{ employee.phone }}</td>
         <td>
-          <a [routerLink]="['employee/edit', employee.id]">Edit</a>
+          <button [routerLink]="['employee/edit', employee.id]">Edit</button>
           <a>&nbsp; &nbsp; &nbsp;</a>
-          <a [routerLink]="">Delete</a>
+          <button (click)="deleteEmployee(employee)">Delete</button>
         </td>
       </tr>
     </tbody>
