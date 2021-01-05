@@ -1,25 +1,31 @@
-<div class="container mt-5">
-    <h2 style="text-decoration:underline;">List Of Employees</h2>
-    <a routerLink="employee/add/0" class="btn btn-primary">Add Employee</a>
-    <br>
-    <br>
-    <table class="table" style="border: double;">
-        <thead>
-            <th style="padding-right: 20px;">Id</th>
-            <th style="padding-right: 20px;"> Name</th>
-            <th style="padding-left: 80px;"> Email</th>
-            <th style="padding-left: 60px;"> Phone</th>
-        
-        </thead>
+<div class="container mt-5 employee-list-container">
+  <h2 style="text-decoration: underline">List Of Employees</h2>
+  <button class="btn-add-employee" routerLink="employee/add/0">
+    Add Employee
+  </button>
+  <br />
+  <br />
+  <table class="table">
+    <thead>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Actions</th>
+    </thead>
 
-        <tbody>
-             <tr *ngFor="let employee of employees">
-                 <td style="padding-right: 20px;">{{ employee.id }}</td>
-                 <td style="padding-right: 20px;"> {{ employee.name}}</td>
-                 <td style="padding-left: 80px;">{{employee.email}}</td>
-                 <td style="padding-left: 60px;">{{employee.phone}}</td>
-                 <td style="padding-left: 50px;"><a [routerLink]="['employee/edit',employee.id]">Edit</a></td>
-            </tr> 
-        </tbody>
-    </table>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.phone }}</td>
+        <td>
+          <a [routerLink]="['employee/edit', employee.id]">Edit</a>
+          <a>&nbsp; &nbsp; &nbsp;</a>
+          <a [routerLink]="">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
