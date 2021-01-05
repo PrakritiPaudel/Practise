@@ -1,0 +1,36 @@
+import { FormsModule }   from '@angular/forms';
+
+@NgModule({
+  imports: [
+             BrowserModule,
+
+             FormsModule     
+           ]
+  
+})
+<div class="ng-container mt-5">
+    <h2>{{ header }}</h2>
+
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+            <label for="">Id</label>
+            <input type="text" class="form-control"> 
+        </div>
+        <div class="form-group">
+            <label for="">Name</label>
+            <input type="text" class="form-control"> 
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="text" class="form-control"> 
+        </div>
+        <div class="form-group">
+            <label for="">Phone</label>
+            <input type="text" class="form-control"> 
+        </div>
+        <div class="form-group">
+           <button type="submit">Save</button>
+           
+        </div>
+    </form>
+</div>
