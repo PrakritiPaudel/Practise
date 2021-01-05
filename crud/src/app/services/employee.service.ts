@@ -21,7 +21,12 @@ export class EmployeeService {
   ];
 
   constructor() {}
+
   onGet() {
     return this.employees;
+  }
+
+  onAdd(employee: Employee) {
+    this.employees.push(employee);
   }
 }
