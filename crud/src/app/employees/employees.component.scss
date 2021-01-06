@@ -1,0 +1,26 @@
+.employee-list-container {
+  text-align: center;
+}
+
+.table {
+  margin: 0 10%;
+  border: double;
+  width: 80%;
+}
+
+.btn-add-employee {
+  background-color: #4caf50;
+  height: 5vh;
+  width: 25vh;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(odd) {
+  background-color: #dddddd;
+}
